@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#11120f">
+<meta name="description" content="SOLE LAB — sneakers sélectionnées, nettoyage et réparation de sneakers.">
+<title>SOLE LAB — Sneakers & Réparation</title>
+<style>
+:root{--bg:#f4f3ee;--ink:#171813;--muted:#686a60;--lime:#d8ff55;--line:#dedfd5;--dark:#11120f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}
+a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.logo{font-weight:950;letter-spacing:-1.5px;font-size:24px}.logo span{color:#789400}.navlinks{display:flex;gap:26px;font-size:13px;font-weight:700}.navright{display:flex;align-items:center;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:white;padding:13px 18px;border-radius:4px;font-size:13px;font-weight:800;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-2px);background:#303228}.btn.light{background:transparent;color:var(--ink)}.btn.lime{background:var(--lime);border-color:var(--lime);color:var(--ink)}
+.hero{background:var(--dark);color:white;position:relative;overflow:hidden}.hero-inner{display:grid;grid-template-columns:1fr 1fr;min-height:555px;align-items:center;gap:30px;padding-top:50px;padding-bottom:50px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:2px;font-weight:900;color:#c4e65a;display:flex;gap:9px;align-items:center}.eyebrow:before{content:"";width:23px;height:2px;background:currentColor}.hero h1{font-size:clamp(44px,6.5vw,78px);line-height:.96;letter-spacing:-5px;margin:20px 0}.hero h1 em{font-style:normal;color:var(--lime)}.hero p{max-width:440px;color:#c4c6bc;line-height:1.7;font-size:15px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.trust{display:flex;gap:20px;flex-wrap:wrap;color:#b5b7ad;font-size:11px;margin-top:34px}.trust span:before{content:"✓";color:var(--lime);font-weight:900;margin-right:7px}.hero-art{height:400px;position:relative;display:flex;align-items:center;justify-content:center}.orb{position:absolute;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,#424832 0%,#24271e 48%,#171812 72%);border:1px solid #414435}.sneaker{position:relative;z-index:1;width:min(440px,100%);filter:drop-shadow(0 26px 20px #0009);transform:rotate(-15deg)}.floating{position:absolute;z-index:2;right:0;bottom:40px;background:var(--lime);color:var(--ink);padding:13px 16px;font-size:11px;font-weight:900;letter-spacing:1px;transform:rotate(4deg)}
+.ticker{background:var(--lime);padding:14px 0;overflow:hidden;font-weight:950;letter-spacing:1.5px;font-size:12px}.ticker-inner{display:flex;justify-content:space-around;gap:30px;white-space:nowrap}
+section{padding:82px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:30px}.kicker{text-transform:uppercase;letter-spacing:2px;color:#758b20;font-size:10px;font-weight:900}.section-head h2{font-size:clamp(30px,4vw,48px);letter-spacing:-2px;margin:8px 0 0;line-height:1}.section-head p{color:var(--muted);font-size:13px;max-width:350px;line-height:1.6;margin:0}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.product{background:#fff;border:1px solid var(--line);padding:12px;transition:.2s}.product:hover{transform:translateY(-4px);box-shadow:0 14px 30px #20201512}.product-img{height:235px;background:#eeeee7;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.product-img img{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply}.tag{position:absolute;top:12px;left:12px;background:var(--lime);font-size:9px;text-transform:uppercase;font-weight:900;letter-spacing:.8px;padding:7px 9px}.product-info{padding:15px 4px 5px}.product-top{display:flex;justify-content:space-between;gap:10px}.product h3{font-size:15px;margin:0 0 7px}.product small{font-size:11px;color:var(--muted)}.price{font-weight:950;font-size:17px;white-space:nowrap}.product .btn{width:100%;margin-top:15px;padding:11px}
+.repair{background:#e7e8df}.repair-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:center}.repair h2{font-size:clamp(35px,5vw,56px);letter-spacing:-3px;line-height:.98;margin:12px 0 18px}.repair-copy p{color:var(--muted);line-height:1.7;font-size:14px;max-width:430px}.repair-points{display:grid;gap:14px;margin-top:25px}.point{display:flex;gap:12px;font-size:13px;font-weight:700;align-items:center}.point i{font-style:normal;display:grid;place-items:center;background:var(--lime);width:30px;height:30px;border-radius:50%;font-size:14px}
+.form-card{background:white;padding:28px;border:1px solid #d7d9cd;box-shadow:12px 12px 0 #d1d5c4}.form-card h3{margin:0 0 6px;font-size:22px;letter-spacing:-.8px}.form-card>p{margin:0 0 22px;color:var(--muted);font-size:12px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:11px;font-weight:800}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);background:#fafaf7;padding:12px;border-radius:3px;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:#879e2b}.field textarea{resize:vertical;min-height:80px}.form-card .btn{width:100%;margin-top:15px}.notice{font-size:10px!important;color:#727468!important;line-height:1.5;margin-top:12px!important}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{border-top:2px solid var(--ink);padding:20px 0}.step .num{font-size:12px;color:#7a8e29;font-weight:950}.step h3{font-size:19px;margin:15px 0 8px;letter-spacing:-.5px}.step p{font-size:13px;line-height:1.7;color:var(--muted);margin:0}
+.reviews{background:var(--dark);color:white}.reviews .section-head p{color:#b9bbae}.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.review{border:1px solid #34362d;padding:22px;background:#191a15}.stars{color:var(--lime);letter-spacing:3px;font-size:13px}.review blockquote{margin:18px 0 20px;font-size:14px;line-height:1.7;color:#e4e5dd}.reviewer{font-size:12px;font-weight:800}.reviewer small{display:block;color:#a9ac9f;font-weight:500;margin-top:5px}.review-note{margin-top:16px;color:#a9ac9f;font-size:11px;line-height:1.6}
+.faq-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:45px}.faq-grid h2{font-size:42px;letter-spacing:-2px;line-height:1;margin:10px 0}.faq details{border-bottom:1px solid var(--line);padding:17px 0}.faq summary{font-size:14px;font-weight:800;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:15px}.faq summary:after{content:"+";font-size:20px}.faq details[open] summary:after{content:"−"}.faq details p{color:var(--muted);font-size:13px;line-height:1.7;max-width:600px}
+footer{background:var(--dark);color:white;padding:38px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap}.footer-inner p{color:#a9ac9f;font-size:11px}.footer-links{display:flex;gap:18px;font-size:11px;color:#d5d7cc}
+.toast{display:none;background:#edf5d0;border:1px solid #c9dd83;padding:12px;margin-top:12px;font-size:12px;line-height:1.5}.toast.show{display:block}
+@media(max-width:760px){.wrap{width:min(100% - 28px,560px)}nav{height:65px}.navlinks{display:none}.navright .btn{padding:10px 12px}.hero-inner{grid-template-columns:1fr;padding-top:55px;gap:0}.hero h1{letter-spacing:-3px}.hero-art{height:300px;margin-top:5px}.orb{width:270px;height:270px}.floating{right:5%;bottom:18px}.ticker-inner{justify-content:flex-start}.section-head{align-items:start;flex-direction:column}.products{grid-template-columns:1fr 1fr;gap:10px}.product-img{height:180px}.product-info{padding:12px 2px 3px}.product-top{flex-direction:column;gap:6px}.repair-grid,.faq-grid{grid-template-columns:1fr;gap:30px}.repair{padding:60px 0}.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.steps,.review-grid{grid-template-columns:1fr}.steps{gap:8px}.step{padding:16px 0}.section-head h2{letter-spacing:-1.4px}.form-card{padding:20px;box-shadow:7px 7px 0 #d1d5c4}section{padding:60px 0}}
+@media(max-width:390px){.products{grid-template-columns:1fr}.product-img{height:230px}.hero h1{font-size:43px}}
+
+.menu-toggle{display:flex;align-items:center;justify-content:center;gap:4px;flex-direction:column;width:42px;height:42px;border:1px solid var(--line);background:transparent;border-radius:4px;cursor:pointer}
+.menu-toggle span{display:block;width:18px;height:2px;background:var(--ink);transition:.2s}
+.menu-toggle[aria-expanded="true"] span:first-child{transform:translateY(6px) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-toggle[aria-expanded="true"] span:last-child{transform:translateY(-6px) rotate(-45deg)}
+.drawer-backdrop{position:fixed;inset:0;background:#0008;z-index:50;opacity:0;visibility:hidden;transition:.25s}
+.drawer-backdrop.open{opacity:1;visibility:visible}
+.drawer{position:fixed;z-index:51;top:0;left:0;height:100dvh;width:min(370px,88vw);background:var(--bg);padding:24px;transform:translateX(-105%);transition:transform .28s ease;overflow:auto;box-shadow:15px 0 45px #0002}
+.drawer.open{transform:translateX(0)}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.drawer-close{border:1px solid var(--line);background:transparent;border-radius:4px;width:38px;height:38px;font-size:24px;cursor:pointer}
+.drawer-label{margin:23px 0 9px;font-size:10px;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:#758b20}
+.drawer-link{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid var(--line);font-size:15px;font-weight:800}
+.drawer-link span{color:#818477;font-size:17px}
+.drawer-note{margin-top:24px;background:var(--lime);padding:16px;font-size:12px;line-height:1.6;font-weight:700}
+body.drawer-open{overflow:hidden}
+@media(min-width:761px){.menu-toggle{margin-right:16px}.navleft{display:flex;align-items:center}}
+@media(max-width:760px){.menu-toggle{width:38px;height:38px}.navleft{display:flex;align-items:center}.logo{font-size:22px}}
+
+
+/* Boutique multi-catégorie façon e-commerce */
+.shop-page{padding-top:65px;padding-bottom:75px}
+.shop-top{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:30px}
+.shop-top h2{font-size:clamp(36px,5vw,58px);letter-spacing:-3px;line-height:1;margin:8px 0}
+.shop-top p{color:var(--muted);font-size:13px;margin:0;line-height:1.6}
+.cart-open{white-space:nowrap;gap:12px}.cart-open span:first-child{background:var(--lime);color:var(--ink);border-radius:50%;min-width:23px;height:23px;display:inline-grid;place-items:center;font-size:11px}
+.shop-controls{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.category-tabs{display:flex;gap:7px;flex-wrap:wrap}.category-tab{background:transparent;border:1px solid transparent;padding:12px 14px;cursor:pointer;font-size:12px;font-weight:850;color:#66695f;border-radius:3px}
+.category-tab.active{background:var(--ink);color:white;border-color:var(--ink)}
+.shop-tools{display:flex;gap:8px}.searchbox{display:flex;align-items:center;gap:7px;border:1px solid var(--line);background:#fff;padding:0 10px;min-width:210px}.searchbox span{font-size:22px}.searchbox input{border:0;outline:0;background:transparent;padding:11px 0;width:100%;min-width:0;font-size:12px}.shop-tools select{border:1px solid var(--line);background:#fff;padding:0 10px;font-size:12px;max-width:150px}
+.catalog-heading{display:flex;align-items:end;justify-content:space-between;margin:29px 0 18px}.catalog-heading span:first-child{font-size:10px;letter-spacing:2px;font-weight:950;color:#758b20}.catalog-heading h3{font-size:26px;letter-spacing:-1px;margin:5px 0 0}.result-count{font-size:11px;color:var(--muted)}
+.store-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 16px}
+.store-product{min-width:0}.product-photo{display:block;width:100%;position:relative;border:0;padding:0;cursor:pointer;background:#efefe9;overflow:hidden;aspect-ratio: .82; text-align:left}
+.product-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;mix-blend-mode:multiply}
+.store-product:hover .product-photo img{transform:scale(1.04)}
+.product-badge{position:absolute;z-index:2;top:12px;left:12px;background:var(--lime);color:var(--ink);padding:7px 9px;font-size:9px;letter-spacing:1px;font-weight:950}
+.product-badge.neutral{background:white}
+.quick-view{position:absolute;bottom:0;left:0;right:0;background:#11120fe8;color:white;padding:14px;font-size:11px;font-weight:850;transform:translateY(100%);transition:transform .22s}
+.store-product:hover .quick-view,.product-photo:focus-visible .quick-view{transform:translateY(0)}
+.store-product-info{display:flex;justify-content:space-between;gap:10px;padding:13px 0 8px}
+.store-product-info h4{font-size:15px;margin:3px 0 5px;letter-spacing:-.2px}.store-product-info strong{font-size:13px;white-space:nowrap;padding-top:4px}
+.product-brand{font-size:9px;letter-spacing:1.1px;color:#73766b;font-weight:900;margin:0}
+.product-description{font-size:11px;color:var(--muted);margin:0;line-height:1.4}
+.add-cart{display:flex;justify-content:space-between;align-items:center;width:100%;background:transparent;border:1px solid #c9cabf;padding:12px 13px;font-size:11px;font-weight:850;cursor:pointer;transition:.2s}
+.add-cart span{font-size:19px;font-weight:400}.add-cart:hover{background:var(--ink);color:white;border-color:var(--ink)}
+.catalog-disclaimer{font-size:10px;color:var(--muted);line-height:1.6;margin-top:30px}
+.empty-state{padding:60px 10px;text-align:center;color:var(--muted);font-size:14px}
+.cart-backdrop{position:fixed;inset:0;background:#0008;z-index:80;opacity:0;visibility:hidden;transition:.25s}.cart-backdrop.open{opacity:1;visibility:visible}
+.cart-drawer{position:fixed;right:0;top:0;width:min(440px,100%);height:100dvh;background:var(--bg);z-index:81;transform:translateX(105%);transition:transform .28s ease;display:flex;flex-direction:column;padding:25px;box-shadow:-15px 0 45px #0002}.cart-drawer.open{transform:translateX(0)}
+.cart-header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:18px}.cart-header h3{font-size:26px;letter-spacing:-1px;margin:4px 0 0}.cart-close{width:38px;height:38px;background:transparent;border:1px solid var(--line);font-size:24px;cursor:pointer}
+.cart-items{overflow:auto;flex:1}.cart-empty{padding:35px 0;font-size:13px;color:var(--muted)}
+.cart-line{display:grid;grid-template-columns:70px 1fr auto;gap:12px;padding:16px 0;border-bottom:1px solid var(--line);align-items:center}.cart-line img{width:70px;height:82px;object-fit:cover;background:#eaeae2}.cart-line h4{font-size:13px;margin:0 0 5px}.cart-line p{font-size:11px;color:var(--muted);margin:0 0 9px}.qty-controls{display:flex;align-items:center;gap:10px}.qty-controls button{width:25px;height:25px;border:1px solid var(--line);background:white;cursor:pointer}.cart-line-price{font-size:12px;font-weight:900;white-space:nowrap}.remove-line{display:block;border:0;background:transparent;color:#6e7067;text-decoration:underline;font-size:10px;padding:7px 0 0;cursor:pointer}
+.cart-footer{border-top:1px solid var(--line);padding-top:18px}.cart-total{display:flex;justify-content:space-between;align-items:center;font-size:13px}.cart-total strong{font-size:20px}.cart-footer p{font-size:10px;line-height:1.5;color:var(--muted)}.cart-footer .btn{width:100%}
+
+
+@media(max-width:760px){
+ .shop-page{padding-top:48px;padding-bottom:55px}
+ .shop-top{align-items:start;flex-direction:column}.shop-top h2{letter-spacing:-2px}
+ .shop-controls{align-items:stretch;flex-direction:column;gap:12px}
+ .category-tabs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px}
+ .category-tab{padding:11px 5px;font-size:10px;line-height:1.25}
+ .shop-tools{width:100%}.searchbox{flex:1;min-width:0}.shop-tools select{max-width:125px}
+ .store-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 10px}
+ .product-photo{aspect-ratio:.78}.store-product-info{gap:5px}.store-product-info h4{font-size:13px}.store-product-info strong{font-size:12px}
+ .product-description{font-size:10px}.product-brand{font-size:8px}
+ .add-cart{padding:11px 9px;font-size:10px}
+ .quick-view{display:none}
+}
+@media(max-width:390px){.store-grid{gap:22px 8px}.store-product-info{flex-direction:column}.store-product-info strong{padding-top:0}.category-tab{font-size:9px}}
+
+</style>
+</head>
+<body>
+<header class="wrap">
+<nav aria-label="Navigation principale">
+<div class="navleft">
+<button class="menu-toggle" id="menuToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="siteDrawer"><span></span><span></span><span></span></button>
+<a class="logo" href="#" aria-label="SOLE LAB accueil">SOLE<span>.</span>LAB</a>
+</div>
+<div class="navlinks"><a href="#shop">Sneakers</a><a href="#clothing">Vêtements</a><a href="#accessories">Accessoires</a><a href="#repair">Réparation</a></div>
+<div class="navright"><a class="btn light" href="#repair">Réserver ↗</a></div>
+</nav>
+</header>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<aside class="drawer" id="siteDrawer" aria-label="Menu principal" aria-hidden="true">
+  <div class="drawer-head"><a class="logo" href="#">SOLE<span>.</span>LAB</a><button class="drawer-close" id="drawerClose" aria-label="Fermer le menu" type="button">×</button></div>
+  <div class="drawer-label">Boutique</div>
+  <a class="drawer-link" href="#shop" data-drawer-category="sneakers">Paires de chaussures <span>↗</span></a>
+  <a class="drawer-link" href="#shop" data-drawer-category="accessories">Accessoires <span>↗</span></a>
+  <a class="drawer-link" href="#shop" data-drawer-category="clothing">Vêtements <span>↗</span></a>
+  <div class="drawer-label">Services</div>
+  <a class="drawer-link" href="#repair">Nettoyage & réparation <span>↗</span></a>
+  <a class="drawer-link" href="#process">Comment ça marche <span>↗</span></a>
+  <a class="drawer-link" href="#reviews">Avis clients <span>↗</span></a>
+  <a class="drawer-link" href="#faq">Questions fréquentes <span>↗</span></a>
+  <a class="drawer-link" href="#contact">Contact <span>↗</span></a>
+  <div class="drawer-note">SOLE LAB — Sneakers, vêtements, accessoires et entretien. Les articles affichés sont des exemples à remplacer par tes vrais produits.</div>
+</aside>
+
+<main>
+<section class="hero">
+<div class="wrap hero-inner">
+<div>
+<div class="eyebrow">Le terrain de jeu des sneakers</div>
+<h1>TES SNEAKERS.<br>UNE <em>SECONDE VIE.</em></h1>
+<p>Des paires sélectionnées avec soin. Un service de nettoyage et de réparation pensé pour prolonger la vie de tes sneakers.</p>
+<div class="actions"><a class="btn lime" href="#shop">Découvrir les paires ↗</a><a class="btn light" href="#repair">Réparer mes sneakers</a></div>
+<div class="trust"><span>Sélection soignée</span><span>Réparation sur demande</span><span>Contact direct</span></div>
+</div>
+<div class="hero-art" aria-label="Illustration de sneaker">
+<div class="orb"></div>
+<svg class="sneaker" viewBox="0 0 600 340" role="img" aria-label="Illustration stylisée d'une sneaker" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="shoe" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fff" offset="0"/><stop stop-color="#d7d9ce" offset="1"/></linearGradient></defs>
+<path d="M67 217 Q100 202 136 174 L200 91 Q217 76 235 93 L300 159 Q335 181 382 190 L477 208 Q515 216 530 248 L537 275 Q530 292 501 294 L94 294 Q53 291 47 268 Q42 241 67 217Z" fill="url(#shoe)" stroke="#1a1b15" stroke-width="7"/>
+<path d="M135 174 Q180 204 226 207 L351 211 Q421 211 485 235 L529 250" fill="none" stroke="#9da092" stroke-width="7"/>
+<path d="M203 100 L244 150 L220 192 M239 116 L281 158 L260 203 M273 145 L310 175 L301 207" stroke="#858a7c" stroke-width="8" fill="none" stroke-linecap="round"/>
+<path d="M67 247 Q170 262 280 254 Q407 246 527 269 L535 280 Q530 295 500 296 L94 296 Q52 292 47 270Z" fill="#d8ff55" stroke="#1a1b15" stroke-width="7"/>
+<path d="M97 280 L508 280" stroke="#22241b" stroke-width="4" stroke-dasharray="11 9"/>
+<path d="M139 178 Q169 190 194 187 L235 147" fill="none" stroke="#22241b" stroke-width="5"/>
+<circle cx="157" cy="218" r="5" fill="#22241b"/><circle cx="179" cy="222" r="5" fill="#22241b"/>
+</svg>
+<div class="floating">CLEAN LOOK. FRESH STEP.</div>
+</div>
+</div>
+</section>
+<div class="ticker"><div class="wrap ticker-inner"><span>RESTORE YOUR PAIR ✳</span><span>FIND YOUR NEXT PAIR ✳</span><span>WALK IT YOUR WAY ✳</span><span>RESTORE YOUR PAIR ✳</span></div></div>
+
+
+<section id="shop" class="wrap shop-page">
+  <div class="shop-top">
+    <div><div class="kicker">SOLE LAB STORE</div><h2>LA BOUTIQUE.</h2><p>Explore la sélection. Choisis ta catégorie et trouve ta prochaine pièce.</p></div>
+    <button class="btn light cart-open" id="cartOpen" type="button">Panier <span id="cartCount">0</span> <span aria-hidden="true">↗</span></button>
+  </div>
+  <div class="shop-controls">
+    <div class="category-tabs" role="tablist" aria-label="Catégories de produits">
+      <button class="category-tab active" type="button" role="tab" aria-selected="true" data-category="sneakers">Paires de chaussures</button>
+      <button class="category-tab" type="button" role="tab" aria-selected="false" data-category="accessories">Accessoires</button>
+      <button class="category-tab" type="button" role="tab" aria-selected="false" data-category="clothing">Vêtements</button>
+    </div>
+    <div class="shop-tools">
+      <label class="searchbox"><span aria-hidden="true">⌕</span><input id="productSearch" type="search" placeholder="Rechercher un article…" aria-label="Rechercher un article"></label>
+      <select id="productSort" aria-label="Trier les produits"><option value="featured">À la une</option><option value="low">Prix croissant</option><option value="high">Prix décroissant</option></select>
+    </div>
+  </div>
+  <div class="catalog-heading"><div><span id="categoryEyebrow">SNEAKERS</span><h3 id="categoryTitle">Paires de chaussures</h3></div><span id="productCount" class="result-count">6 articles</span></div>
+  <div class="store-grid" id="productGrid">
+    <article class="store-product" data-category="sneakers" data-name="red runner" data-price="79">
+      <button class="product-photo" type="button" data-view="red-runner" aria-label="Voir Red Runner"><span class="product-badge">NOUVEAU</span><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85" alt="Sneaker rouge et blanche"><span class="quick-view">Détails du produit ↗</span></button>
+      <div class="store-product-info"><div><p class="product-brand">SOLE LAB SELECTION</p><h4>Red Runner</h4><p class="product-description">Sneaker sport · Rouge / blanc</p></div><strong>79,00 €</strong></div><button class="add-cart" data-add="red-runner" type="button">Ajouter au panier <span>+</span></button>
+    </article>
+    <article class="store-product" data-category="sneakers" data-name="mono street" data-price="89">
+      <button class="product-photo" type="button" data-view="mono-street" aria-label="Voir Mono Street"><span class="product-badge neutral">ESSENTIEL</span><img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=900&q=85" alt="Sneaker streetwear"><span class="quick-view">Détails du produit ↗</span></button>
+      <div class="store-product-info"><div><p class="product-brand">SOLE LAB SELECTION</p><h4>Mono Street</h4><p class="product-description">Sneaker urbaine · Noir / blanc</p></div><strong>89,00 €</strong></div><button class="add-cart" data-add="mono-street" type="button">Ajouter au panier <span>+</span></button>
+    </article>
+    <article class="store-product" data-category="sneakers" data-name="cloud low" data-price="69">
+      <button class="product-photo" type="button" data-view="cloud-low" aria-label="Voir Cloud Low"><img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=900&q=85" alt="Sneaker blanche"><span class="quick-view">Détails du produit ↗</span></button>
+      <div class="store-product-info"><div><p class="product-brand">SOLE LAB SELECTION</p><h4>Cloud Low</h4><p class="product-description">Sneaker minimaliste · Blanc</p></div><strong>69,00 €</strong></div><button class="add-cart" data-add="cloud-low" type="button">Ajouter au panier <span>+</span></button>
+    </article>
+    <article class="store-product" data-category="sneakers" data-name="court classic" data-price="95">
+      <button class="product-photo" type="button" data-view="court-classic" aria-label="Voir Court Classic"><img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=900&q=85" alt="Sneaker classique claire"><span class="quick-view">Détails du produit ↗</span></button>
+      <div class="store-product-info"><div><p class="product-brand">SOLE LAB SELECTION</p><h4>Court Classic</h4><p class="product-description">Sneaker basse · Ton neutre</p></div><strong>95,00 €</strong></div><button class="add-cart" data-add="court-classic" type="button">Ajouter au panier <span>+</span></button>
+    </article>
+    <article class="store-product" data-category="sneakers" data-name="night shift" data-price="84">
+      <button class="product-photo" type="button" data-view="night-shift" aria-label="Voir Night Shift"><span class="product-badge">SÉLECTION</span><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85" alt="Sneaker sombre"><span class="quick-view">Détails du produit ↗</span></button>
+      <div class="store-product-info"><div><p class="product-brand">SOLE LAB SELECTION</p><h4>Night Shift</h4><p class="product-description">Sneaker urbaine · Coloris sombre</p></div><strong>84,00 €</strong></div><button class="add-cart" data-add="night-shift" type="button">Ajouter au panier <span>+</span></button>
+    </article>
+    <article class="store-product" data-category="sneakers" data-name="retro court" data-price="74">
+      <button class="product-photo" type="button" data-view="retro-court" aria-label="Voir Retro Court"><img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=900&q=85" alt="Sneaker rétro claire"><span class="quick-view">Détails du produit ↗</span></button>
+      <div class="store-product-info"><div><p class="product-brand">SOLE LAB SELECTION</p><h4>Retro Court</h4><p class="product-description">Inspirée du vintage · Clair</p></div><strong>74,00 €</strong></div><button class="add-cart" data-add="retro-court" type="button">Ajouter au panier <span>+</span></button>
+    </article>
+
+    <article class="store-product" data-category="accessories" data-name="daily cap" data-price="22">
+      <button class="product-photo" type="button" data-view="daily-cap" aria-label="Voir Daily Cap"><span class="product-badge">BESTSELLER</span><img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=900&q=85" alt="Casquette streetwear"><span class="quick-view">Détails du produit ↗</span></button>
+      <div class="store-product-info"><div><p class="product-brand">SOLE LAB ACCESSORIES</p><h4>Daily Cap</h4><p class="product-description">Casquette · Taille ajustable</p></div><strong>22,00 €</strong></div><button class="add-cart" data-add="daily-cap" type="button">Ajouter au panier <span>+</span></button>
+    </article>
+    <article class="store-product" data-category="accessories" data-name="utility bag" data-price="29">
+      <button class="product-photo" type="button" data-view="utility-bag" aria-label="Voir Utility Bag"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85" alt="Sac utilitaire"><span class="quick-view">Détails du produit ↗</span></button>
+      <div class="store-product-info"><div><p class="product-brand">SOLE LAB ACCESSORIES</p><h4>Utility Bag</h4><p class="product-description">Sac pratique · Noir</p></div><strong>29,00 €</strong></div><button class="add-cart" data-add="utility-bag" type="button">Ajouter au panier <span>+</span></button>
+    </article>
+    <article class="store-product" data-category="accessories" data-name="care kit" data-price="19">
+      <button class="product-photo" type="button" data-view="care-kit" aria-label="Voir Care Kit"><img src="https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&fit=crop&w=900&q=85" alt="Accessoires et entretien"><span class="quick-view">Détails du produit ↗</span></button>
+      <div class="store-product-info"><div><p class="product-brand">SOLE LAB CARE</p><h4>Care Kit</h4><p class="product-description">Kit entretien sneakers</p></div><strong>19,00 €</strong></div><button class="add-cart" data-add="care-kit" type="button">Ajouter au panier <span>+</span></button>
+    </article>
+    <article class="store-product" data-category="accessories" data-name="crew socks" data-price="12">
+      <button class="product-photo" type="button" data-view="crew-socks" aria-label="Voir Crew Socks"><img src="https://images.unsplash.com/photo-1582966772680-860e372bb558?auto=format&fit=crop&w=900&q=85" alt="Chaussettes sport"><span class="quick-view">Détails du produit ↗</span></button>
+      <div class="store-product-info"><div><p class="product-brand">SOLE LAB ACCESSORIES</p><h4>Crew Socks</h4><p class="product-description">Chaussettes · Lot exemple</p></div><strong>12,00 €</strong></div><button class="add-cart" data-add="crew-socks" type="button">Ajouter au panier <span>+</span></button>
+    </article>
+    <article class="store-product" data-category="clothing" data-name="core hoodie" data-price="49">
+      <button class="product-photo" type="button" data-view="core-hoodie" aria-label="Voir Core Hoodie"><span class="product-badge">NOUVEAU</span><img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=900&q=85" alt="Sweat à capuche"><span class="quick-view">Détails du produit ↗</span></button>
+      <div class="store-product-info"><div><p class="product-brand">SOLE LAB APPAREL</p><h4>Core Hoodie</h4><p class="product-description">Sweat à capuche · Unisexe</p></div><strong>49,00 €</strong></div><button class="add-cart" data-add="core-hoodie" type="button">Ajouter au panier <span>+</span></button>
+    </article>
+    <article class="store-product" data-category="clothing" data-name="logo tee" data-price="25">
+      <button class="product-photo" type="button" data-view="logo-tee" aria-label="Voir Logo Tee"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85" alt="T-shirt basique"><span class="quick-view">Détails du produit ↗</span></button>
+      <div class="store-product-info"><div><p class="product-brand">SOLE LAB APPAREL</p><h4>Logo Tee</h4><p class="product-description">T-shirt · Coupe classique</p></div><strong>25,00 €</strong></div><button class="add-cart" data-add="logo-tee" type="button">Ajouter au panier <span>+</span></button>
+    </article>
+    <article class="store-product" data-category="clothing" data-name="relaxed pants" data-price="39">
+      <button class="product-photo" type="button" data-view="relaxed-pants" aria-label="Voir Relaxed Pants"><img src="https://images.unsplash.com/photo-1517438476312-10d79c077509?auto=format&fit=crop&w=900&q=85" alt="Pantalon streetwear"><span class="quick-view">Détails du produit ↗</span></button>
+      <div class="store-product-info"><div><p class="product-brand">SOLE LAB APPAREL</p><h4>Relaxed Pants</h4><p class="product-description">Pantalon décontracté</p></div><strong>39,00 €</strong></div><button class="add-cart" data-add="relaxed-pants" type="button">Ajouter au panier <span>+</span></button>
+    </article>
+  </div>
+  <div class="empty-state" id="emptyState" hidden>Aucun article trouvé. Essaie une autre recherche.</div>
+  <p class="catalog-disclaimer">Catalogue de démonstration : les produits, images, prix, tailles et stocks sont à vérifier et remplacer avant toute vente réelle.</p>
+</section>
+
+<div class="cart-backdrop" id="cartBackdrop"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Panier" aria-hidden="true">
+  <div class="cart-header"><div><p class="product-brand">SOLE LAB STORE</p><h3>Ton panier <span id="cartHeaderCount">(0)</span></h3></div><button class="cart-close" id="cartClose" aria-label="Fermer le panier" type="button">×</button></div>
+  <div class="cart-items" id="cartItems"><div class="cart-empty">Ton panier est vide pour le moment.</div></div>
+  <div class="cart-footer"><div class="cart-total"><span>Sous-total estimé</span><strong id="cartTotal">0,00 €</strong></div><p>Livraison et conditions à confirmer avant la commande.</p><button class="btn" id="checkoutButton" type="button">Continuer <span>↗</span></button><div id="checkoutNotice" class="toast" role="status"></div></div>
+</aside>
+<section id="repair" class="repair">
+<div class="wrap repair-grid">
+<div class="repair-copy"><div class="kicker">Atelier SOLE LAB</div><h2>NE LES REMPLACE PAS.<br><span style="color:#758b20">RESTAURE-LES.</span></h2><p>Une paire fatiguée ? On commence par regarder ce qu'il est possible de faire. Chaque demande est évaluée avant de confirmer le prix et le délai.</p>
+<div class="repair-points"><div class="point"><i>✓</i> Nettoyage extérieur et semelles</div><div class="point"><i>✓</i> Entretien des matières selon le modèle</div><div class="point"><i>✓</i> Petites réparations à évaluer</div></div></div>
+<form class="form-card" id="repairForm"><h3>Parle-nous de ta paire.</h3><p>Demande de devis gratuite, sans engagement.</p>
+<div class="fields">
+<div class="field"><label for="name">Ton prénom</label><input id="name" name="name" placeholder="Ex. Alex" required></div>
+<div class="field"><label for="contact">Ton e-mail ou téléphone</label><input id="contact" name="contact" placeholder="Pour te répondre" required></div>
+<div class="field"><label for="service">Service souhaité</label><select id="service" name="service"><option>Nettoyage</option><option>Nettoyage profond</option><option>Réparation</option><option>Je ne sais pas encore</option></select></div>
+<div class="field"><label for="brand">Marque / modèle</label><input id="brand" name="brand" placeholder="Ex. Nike Air Max"></div>
+<div class="field full"><label for="details">Décris le problème</label><textarea id="details" name="details" placeholder="Taches, semelle décollée, matière…"></textarea></div>
+</div><button class="btn" type="submit">Préparer ma demande ↗</button><div id="formNotice" class="toast" role="status"></div><p class="notice">Prototype : ce formulaire n'envoie pas encore de message. Ajoute une adresse e-mail ou un service de formulaire avant la mise en ligne. Demande l'accord d'un parent/adulte responsable pour gérer les demandes et coordonnées clients.</p>
+</form>
+</div>
+</section>
+
+<section id="process" class="wrap">
+<div class="section-head"><div><div class="kicker">Simple et transparent</div><h2>COMMENT ÇA MARCHE.</h2></div><p>Un processus clair, sans mauvaise surprise.</p></div>
+<div class="steps"><div class="step"><div class="num">01 / TU NOUS CONTACTES</div><h3>Explique ton besoin</h3><p>Envoie le modèle, quelques photos et ce que tu souhaites améliorer.</p></div><div class="step"><div class="num">02 / ON ÉVALUE</div><h3>Devis avant travaux</h3><p>Le prix et le délai sont confirmés après inspection de la paire.</p></div><div class="step"><div class="num">03 / ON S'OCCUPE DE TA PAIRE</div><h3>Retour au propre</h3><p>On valide ensemble le résultat attendu et on te tient au courant.</p></div></div>
+</section>
+
+<section class="reviews" id="reviews">
+<div class="wrap"><div class="section-head"><div><div class="kicker">La confiance avant tout</div><h2>LES AVIS CLIENTS.</h2></div><p>Les retours authentiques aident chacun à choisir en confiance.</p></div>
+<div class="review-grid"><article class="review"><div class="stars">★★★★★</div><blockquote>« Ton avis pourra apparaître ici après une vraie commande ou réparation. »</blockquote><div class="reviewer">Avis client à ajouter<small>À remplacer par un retour réel avec accord du client</small></div></article><article class="review"><div class="stars">★★★★★</div><blockquote>« Décris ton expérience honnêtement : accueil, résultat, délai ou rapport qualité-prix. »</blockquote><div class="reviewer">Avis client à ajouter<small>Emplacement de démonstration — pas un avis publié</small></div></article><article class="review"><div class="stars">★★★★★</div><blockquote>« Publie uniquement un commentaire authentique et vérifiable. »</blockquote><div class="reviewer">Avis client à ajouter<small>Emplacement de démonstration — pas un avis publié</small></div></article></div>
+<div class="review-note">Les textes ci-dessus sont des emplacements de démonstration, pas des témoignages réels. Remplace-les par des avis authentiques avec l'accord des clients.</div>
+</div>
+</section>
+
+<section id="faq" class="wrap">
+<div class="faq-grid"><div><div class="kicker">Besoin d'infos ?</div><h2>LES QUESTIONS<br>FRÉQUENTES.</h2><p style="color:var(--muted);font-size:13px;line-height:1.7">Tu hésites ? Voici les infos à connaître avant de nous contacter.</p></div><div class="faq">
+<details><summary>Comment connaître le prix d'une réparation ?</summary><p>Envoie le modèle et des photos nettes. Un devis est confirmé après évaluation, avant tout travail.</p></details>
+<details><summary>Est-ce que toutes les sneakers peuvent être nettoyées ?</summary><p>Le traitement dépend des matériaux, de l'âge et de l'état de la paire. Certaines marques ou dégradations peuvent limiter le résultat.</p></details>
+<details><summary>Les sneakers en vente sont-elles authentiques ?</summary><p>Pour chaque paire, indique clairement son origine et ne la présente comme authentique que si tu peux raisonnablement le vérifier. En cas de doute, ne la mets pas en vente comme authentique.</p></details>
+<details><summary>Comment commander ?</summary><p>Contacte-nous pour confirmer la taille, l'état, la disponibilité, les frais éventuels et les conditions de vente avant de payer.</p></details>
+</div></div>
+</section>
+<section id="contact" class="wrap" style="padding-top:0"><div style="background:var(--lime);padding:28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap"><div><div class="kicker" style="color:#4b5c0b">On lance le mouvement ?</div><h2 style="margin:8px 0 0;font-size:clamp(26px,4vw,40px);letter-spacing:-1.5px">TA PROCHAINE PAIRE T'ATTEND.</h2></div><a class="btn" href="#shop">Voir la sélection ↗</a></div></section>
+</main>
+<footer><div class="wrap footer-inner"><div><a class="logo" href="#">SOLE<span style="color:var(--lime)">.</span>LAB</a><p>Sneakers & entretien · Une maquette à personnaliser</p></div><div class="footer-links"><a href="#shop">Sneakers</a><a href="#repair">Réparation</a><a href="#faq">FAQ</a></div><p>© <span id="year"></span> SOLE LAB</p></div></footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const products = {
+ 'red-runner': {name:'Red Runner', price:79, category:'sneakers', image:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=300&q=80'},
+ 'mono-street': {name:'Mono Street', price:89, category:'sneakers', image:'https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=300&q=80'},
+ 'cloud-low': {name:'Cloud Low', price:69, category:'sneakers', image:'https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=300&q=80'},
+ 'court-classic': {name:'Court Classic', price:95, category:'sneakers', image:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=300&q=80'},
+ 'night-shift': {name:'Night Shift', price:84, category:'sneakers', image:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=300&q=80'},
+ 'retro-court': {name:'Retro Court', price:74, category:'sneakers', image:'https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=300&q=80'},
+ 'daily-cap': {name:'Daily Cap', price:22, category:'accessories', image:'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=300&q=80'},
+ 'utility-bag': {name:'Utility Bag', price:29, category:'accessories', image:'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=300&q=80'},
+ 'care-kit': {name:'Care Kit', price:19, category:'accessories', image:'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&fit=crop&w=300&q=80'},
+ 'crew-socks': {name:'Crew Socks', price:12, category:'accessories', image:'https://images.unsplash.com/photo-1582966772680-860e372bb558?auto=format&fit=crop&w=300&q=80'},
+ 'core-hoodie': {name:'Core Hoodie', price:49, category:'clothing', image:'https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=300&q=80'},
+ 'logo-tee': {name:'Logo Tee', price:25, category:'clothing', image:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=300&q=80'},
+ 'relaxed-pants': {name:'Relaxed Pants', price:39, category:'clothing', image:'https://images.unsplash.com/photo-1517438476312-10d79c077509?auto=format&fit=crop&w=300&q=80'}
+};
+let activeCategory = 'sneakers';
+const cart = {};
+const categoryNames = {sneakers:'Paires de chaussures', accessories:'Accessoires', clothing:'Vêtements'};
+const categoryLabels = {sneakers:'SNEAKERS', accessories:'ACCESSOIRES', clothing:'VÊTEMENTS'};
+const money = value => value.toLocaleString('fr-FR',{style:'currency',currency:'EUR'});
+function updateCatalog(){
+  const query = document.getElementById('productSearch').value.trim().toLowerCase();
+  const sort = document.getElementById('productSort').value;
+  const grid = document.getElementById('productGrid');
+  const cards = Array.from(grid.querySelectorAll('.store-product'));
+  cards.sort((a,b) => {
+    if(sort === 'low') return Number(a.dataset.price)-Number(b.dataset.price);
+    if(sort === 'high') return Number(b.dataset.price)-Number(a.dataset.price);
+    return 0;
+  }).forEach(card => grid.appendChild(card));
+  let count = 0;
+  cards.forEach(card => {
+    const visible = card.dataset.category === activeCategory && card.dataset.name.includes(query);
+    card.hidden = !visible;
+    if(visible) count++;
+  });
+  document.getElementById('categoryTitle').textContent = categoryNames[activeCategory];
+  document.getElementById('categoryEyebrow').textContent = categoryLabels[activeCategory];
+  document.getElementById('productCount').textContent = `${count} article${count>1?'s':''}`;
+  document.getElementById('emptyState').hidden = count !== 0;
+  document.querySelectorAll('.category-tab').forEach(btn => {
+    const selected = btn.dataset.category === activeCategory;
+    btn.classList.toggle('active', selected);
+    btn.setAttribute('aria-selected', String(selected));
+  });
+}
+document.querySelectorAll('.category-tab').forEach(btn => btn.addEventListener('click', () => {
+  activeCategory = btn.dataset.category; updateCatalog();
+}));
+document.getElementById('productSearch').addEventListener('input', updateCatalog);
+document.getElementById('productSort').addEventListener('change', updateCatalog);
+document.querySelectorAll('[data-drawer-category]').forEach(link => link.addEventListener('click', () => {
+  activeCategory = link.dataset.drawerCategory; updateCatalog();
+}));
+function renderCart(){
+  const entries = Object.entries(cart).filter(([id,qty]) => qty > 0);
+  const count = entries.reduce((sum,[id,qty]) => sum+qty,0);
+  const total = entries.reduce((sum,[id,qty]) => sum+products[id].price*qty,0);
+  document.getElementById('cartCount').textContent = count;
+  document.getElementById('cartHeaderCount').textContent = `(${count})`;
+  document.getElementById('cartTotal').textContent = money(total);
+  const container = document.getElementById('cartItems');
+  if(!entries.length){container.innerHTML='<div class="cart-empty">Ton panier est vide pour le moment.</div>';return;}
+  container.innerHTML = entries.map(([id,qty]) => {
+    const p = products[id];
+    return `<div class="cart-line"><img src="${p.image}" alt=""><div><h4>${p.name}</h4><p>${money(p.price)} / article</p><div class="qty-controls"><button type="button" data-qty="${id}" data-change="-1" aria-label="Retirer un article">−</button><span>${qty}</span><button type="button" data-qty="${id}" data-change="1" aria-label="Ajouter un article">+</button></div><button type="button" class="remove-line" data-remove="${id}">Supprimer</button></div><div class="cart-line-price">${money(p.price*qty)}</div></div>`;
+  }).join('');
+  container.querySelectorAll('[data-qty]').forEach(btn => btn.addEventListener('click', () => {
+    const id = btn.dataset.qty; cart[id] = (cart[id] || 0) + Number(btn.dataset.change);
+    if(cart[id] <= 0) delete cart[id]; renderCart();
+  }));
+  container.querySelectorAll('[data-remove]').forEach(btn => btn.addEventListener('click', () => {delete cart[btn.dataset.remove];renderCart();}));
+}
+function setCartOpen(open){
+  document.getElementById('cartDrawer').classList.toggle('open',open);
+  document.getElementById('cartBackdrop').classList.toggle('open',open);
+  document.getElementById('cartDrawer').setAttribute('aria-hidden',String(!open));
+  document.body.classList.toggle('drawer-open',open);
+}
+document.getElementById('cartOpen').addEventListener('click',()=>setCartOpen(true));
+document.getElementById('cartClose').addEventListener('click',()=>setCartOpen(false));
+document.getElementById('cartBackdrop').addEventListener('click',()=>setCartOpen(false));
+document.querySelectorAll('[data-add]').forEach(btn => btn.addEventListener('click',()=>{
+  const id=btn.dataset.add;cart[id]=(cart[id]||0)+1;renderCart();
+  const original=btn.innerHTML;btn.innerHTML='Ajouté au panier ✓';setTimeout(()=>btn.innerHTML=original,1100);
+}));
+document.getElementById('checkoutButton').addEventListener('click',()=>{
+  const notice=document.getElementById('checkoutNotice');
+  notice.textContent='La boutique est une maquette : le paiement et la validation des commandes ne sont pas encore connectés.';
+  notice.classList.add('show');
+});
+updateCatalog(); renderCart();
+
+
+const menuToggle = document.getElementById('menuToggle');
+const siteDrawer = document.getElementById('siteDrawer');
+const drawerBackdrop = document.getElementById('drawerBackdrop');
+const drawerClose = document.getElementById('drawerClose');
+function setDrawer(open){
+  siteDrawer.classList.toggle('open', open);
+  drawerBackdrop.classList.toggle('open', open);
+  document.body.classList.toggle('drawer-open', open);
+  menuToggle.setAttribute('aria-expanded', String(open));
+  siteDrawer.setAttribute('aria-hidden', String(!open));
+  menuToggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+}
+menuToggle.addEventListener('click', () => setDrawer(menuToggle.getAttribute('aria-expanded') !== 'true'));
+drawerClose.addEventListener('click', () => setDrawer(false));
+drawerBackdrop.addEventListener('click', () => setDrawer(false));
+siteDrawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setDrawer(false)));
+document.addEventListener('keydown', e => { if(e.key === 'Escape') setDrawer(false); });
+
+
+document.getElementById('repairForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const data = new FormData(this);
+  const summary = `Demande préparée pour ${data.get('name')} — ${data.get('service')}, modèle : ${data.get('brand') || 'non précisé'}. Ajoute une solution d'envoi avant la mise en ligne.`;
+  const notice = document.getElementById('formNotice');
+  notice.textContent = summary;
+  notice.classList.add('show');
+});
+</script>
+</body>
+</html>
